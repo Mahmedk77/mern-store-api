@@ -1,15 +1,17 @@
 import express from 'express';
 import cors from 'cors'
 import { connectToDataBase } from './database/mongoDB.js';
-import { errorMiddleware } from '../middlewares/error.middleware.js';
-import { notFoundMiddleware } from '../middlewares/notFound.middleware.js';
 import productsRouter from './routes/products.routes.js';
+import { notFoundMiddleware } from './middlewares/notFound.middleware.js';
+import { errorMiddleware } from './middlewares/error.middleware.js';
+
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(errorMiddleware);
 
 app.use('/api/v1/products', productsRouter)
 
@@ -22,7 +24,6 @@ app.get("/", (req, res) => {
 app.use(notFoundMiddleware);
 
 // Central error handler for thrown errors from anywhere above
-app.use(errorMiddleware);
 
 app.listen(5000, async ()=>{
     console.log('Listening, http://localhost:5000');

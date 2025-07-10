@@ -17,7 +17,7 @@ A full-stack MERN Store App to display, search, filter, and manage products. Bui
 
 ## 🧱 Tech Stack
 
-- **Frontend:** React, Tailwind (optional)
+- **Frontend:** React, Tailwind 
 - **Backend:** Node.js, Express, MongoDB, Mongoose
 
 ## ⚙️ Getting Started

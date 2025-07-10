@@ -1,4 +1,4 @@
-export const products = [
+export const productsJSON = [
   {
     "name": "accent chair",
     "price": 25,
