@@ -22,8 +22,9 @@ A full-stack MERN Store App to display, search, filter, and manage products. Bui
 
 ## ⚙️ Getting Started
 
-### Backend
-- npm run server
+```bash
+# For backend
+npm run server
 
-### Frontend
-- npm run dev
+# For frontend
+npm run dev
